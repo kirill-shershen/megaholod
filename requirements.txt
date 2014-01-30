@@ -1,0 +1,7 @@
+Django==1.5
+dj-database-url
+south
+django-menu 
+django-grappelli==2.4.8
+Pillow
+psycopg2

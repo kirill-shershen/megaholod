@@ -1,0 +1,1 @@
+scripts\python manage.py runserver
