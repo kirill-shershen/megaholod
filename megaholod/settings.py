@@ -68,12 +68,12 @@ USE_TZ = True
 
 # Absolute filesystem path to the directory that will hold user-uploaded files.
 # Example: "/var/www/example.com/media/"
-MEDIA_ROOT = ''
+MEDIA_ROOT = '%s\media'%BASE_DIR
 
 # URL that handles the media served from MEDIA_ROOT. Make sure to use a
 # trailing slash.
 # Examples: "http://example.com/media/", "http://media.example.com/"
-MEDIA_URL = ''
+MEDIA_URL = '/media/'
 
 # Absolute path to the directory static files should be collected to.
 # Don't put anything in this directory yourself; store your static files
@@ -150,6 +150,7 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'grappelli',
+    'filebrowser',
     # Uncomment the next line to enable the admin:
     'django.contrib.admin',
     'news',
@@ -157,6 +158,15 @@ INSTALLED_APPS = (
     # Uncomment the next line to enable admin documentation:
     # 'django.contrib.admindocs',
 )
+
+FILEBROWSER_MEDIA_ROOT = MEDIA_ROOT 
+FILEBROWSER_MEDIA_URL = MEDIA_URL 
+FILEBROWSER_STATIC_ROOT = STATIC_ROOT 
+FILEBROWSER_STATIC_URL = STATIC_URL 
+URL_FILEBROWSER_MEDIA = STATIC_URL + 'filebrowser/' 
+PATH_FILEBROWSER_MEDIA = STATIC_ROOT + 'filebrowser/' 
+# URL_TINYMCE = STATIC_URL + 'tiny_mce/' 
+# PATH_TINYMCE = STATIC_ROOT + 'tiny_mce/' 
 
 SESSION_SERIALIZER = 'django.contrib.sessions.serializers.JSONSerializer'
 
