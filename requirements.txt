@@ -6,3 +6,4 @@ django-grappelli==2.4.8
 Pillow
 django-filebrowser
 psycopg2
+mysql-python

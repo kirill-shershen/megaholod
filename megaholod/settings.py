@@ -1,5 +1,6 @@
 import os
-if not os.environ['HOST'] == 'local':
+HOST = os.environ['HOST']
+if not HOST == 'local':
     BASE_DIR = os.environ['DJ_PROJECT_HOME']
 else:
     BASE_DIR = os.getcwd()
@@ -34,14 +35,9 @@ DATABASES = {
     }
 }
 
-import dj_database_url
-DATABASES['default'] =  dj_database_url.config(default=os.environ.get('DATABASE_URL'))
-DATABASES['default']['ENGINE'] = 'django.db.backends.postgresql_psycopg2'
-DATABASES['default']['NAME'] = 'megaholod'
-
 # Hosts/domain names that are valid for this site; required if DEBUG is False
 # See https://docs.djangoproject.com/en/1.5/ref/settings/#allowed-hosts
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['*', "*.lclients.ru"]
 
 # Local time zone for this installation. Choices can be found here:
 # http://en.wikipedia.org/wiki/List_of_tz_zones_by_name
@@ -68,7 +64,7 @@ USE_TZ = True
 
 # Absolute filesystem path to the directory that will hold user-uploaded files.
 # Example: "/var/www/example.com/media/"
-MEDIA_ROOT = '%s\media'%BASE_DIR
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 # URL that handles the media served from MEDIA_ROOT. Make sure to use a
 # trailing slash.
@@ -79,7 +75,7 @@ MEDIA_URL = '/media/'
 # Don't put anything in this directory yourself; store your static files
 # in apps' "static/" subdirectories and in STATICFILES_DIRS.
 # Example: "/var/www/example.com/static/"
-STATIC_ROOT = '%s\static'%BASE_DIR
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 # URL prefix for static files.
 # Example: "http://example.com/static/", "http://static.example.com/"
@@ -198,3 +194,25 @@ LOGGING = {
         },
     }
 }
+
+if HOST != 'locum':
+    import dj_database_url
+    DATABASES['default'] =  dj_database_url.config(default=os.environ.get('DATABASE_URL'))
+    DATABASES['default']['ENGINE'] = 'django.db.backends.postgresql_psycopg2'
+    DATABASES['default']['NAME'] = 'megaholod'
+else:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.mysql', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
+            'NAME': 'kxekxe_megahol39',                      # Or path to database file if using sqlite3.
+            # The following settings are not used with sqlite3:
+            'USER': 'kxekxe_megahol39',
+            'PASSWORD': 'hWy78lQZ',
+            'HOST': 'mysql2.locum.ru',                      # Empty for localhost through domain sockets or '127.0.0.1' for localhost through TCP.
+            'PORT': '',                      # Set to empty string for default.
+        }
+    }
+    MEDIA_ROOT = '/home/hosting_kxekxe/projects/megaholod/media'
+    STATIC_URL = '/static/'
+    STATIC_ROOT = '/home/hosting_kxekxe/projects/megaholod/static'
+    ADMIN_MEDIA_PREFIX = '/static/admin/'
