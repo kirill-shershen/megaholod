@@ -4,10 +4,11 @@ from filebrowser.sites import site
 from django.contrib import admin
 admin.autodiscover()
 import settings
+from megaholod import views
 
 urlpatterns = patterns('',
     # Examples:
-    # url(r'^$', 'megaholod.views.home', name='home'),
+    url(r'^$', 'megaholod.views.index', name='index'),
     # url(r'^megaholod/', include('megaholod.foo.urls')),
 
     # Uncomment the admin/doc line below to enable admin documentation:
