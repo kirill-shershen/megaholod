@@ -1,24 +1,22 @@
 @import "bootstrap/bootstrap.less";
 @import "variables.less";
 
-body {margin: 0; padding: 0;}
+@import url(//fonts.googleapis.com/css?family=Open+Sans:300,400,600,700);
+
+.jumbo {
+    background-color: #E74C3C;
+}
 
 .bg-gray {
-    margin: 0;
-    padding: 0;
     background-color: #f8f8f8;
+}
+
+.bg-red {
+    background-color: #E74C3C;
 }
 
 .bg-light {
-    margin: 0;
-    padding: 0;
     background-color: #ffffff;
-}
-
-div.block {
-    margin: 0;
-    padding: 0;
-    background-color: #f8f8f8;
 }
 
 .text1 {
@@ -29,7 +27,39 @@ div.block {
 
 .bigtitle {
     font-family:Helvetica;
-	font-size: 30px;
-    line-height: 180px;
-	color: RED;
+	font-size: 35px;
+    margin-top:5px;
+    text-align: left;
 }
+
+.color1 {color: #E74C3C}
+
+.txt2 {
+    font:300 20px/30px 'Open Sans', Arial, sans-serif;
+    color:#a9a9a9; 
+    margin-top: 0px;
+    text-transform: uppercase;
+    display: inline-block;
+}
+
+.bigblacktitle {
+    font-family:Helvetica;
+    font-size: 30px;
+    line-height: 180px;
+    color: #3E454C;
+}
+
+.navbar-default {
+    border-width: 0;
+    background-color: #ffffff;
+}
+
+.headerlink {
+    font-size: 18px;
+    margin-top: 25px;
+}
+
+@nav-link-padding: 10px 30px;
+@navbar-default-link-color: #b2b2b2;
+@navbar-default-link-hover-color: #E74C3C;
+@navbar-default-link-active-color: @navbar-default-link-hover-color;
