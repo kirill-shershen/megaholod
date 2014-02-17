@@ -9,6 +9,7 @@ from megaholod import views
 urlpatterns = patterns('',
     # Examples:
     url(r'^$', 'megaholod.views.index', name='index'),
+    url(r'^contacts/', 'megaholod.views.contacts', name='contacts'),
     # url(r'^megaholod/', include('megaholod.foo.urls')),
 
     # Uncomment the admin/doc line below to enable admin documentation:
