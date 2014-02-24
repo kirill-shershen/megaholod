@@ -3,3 +3,4 @@ Lib
 Scripts
 logs
 *.pyc
+.idea

@@ -7,3 +7,7 @@ def index(request):
 def contacts(request):
     contacts = FlatPage.objects.get(url=request.path)
     return render(request, 'contacts.html', locals())
+
+def about(request):
+    about = FlatPage.objects.get(url=request.path)
+    return render(request, 'about.html', locals())

@@ -1,0 +1,16 @@
+<h2><span class="color1">ПОСЛЕДНИЕ</span><br>НОВОСТИ</h2>
+{% for news in last_news %}
+<div class="row">
+    <div class="col-md-4 jumbo num_section">
+        <span class="date_txt1">{{ news.time|date:"d" }}</span>
+        <span class="date_txt2">{{ news.time|date:"M" }}</span>
+        <span class="date_txt3">{{ news.time|date:"Y" }}</span>
+    </div>
+    <div class="col-md-8">
+        <p class="txt3">{{news.title}}</p>
+        <p class="txt4"></p>
+        <p>{{ news.text|safe|truncatewords_html:10}}</p>
+    </div>
+</div>
+{% endfor %}
+</div>

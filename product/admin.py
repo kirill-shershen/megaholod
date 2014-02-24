@@ -1,6 +1,6 @@
 from django.contrib import admin
 from megaholod import settings
-from product.models import Product
+from product.models import Product, Object
 
 class CollectionAdmin(admin.ModelAdmin):
  
@@ -11,3 +11,4 @@ class CollectionAdmin(admin.ModelAdmin):
         )
 
 admin.site.register(Product, CollectionAdmin)
+admin.site.register(Object, CollectionAdmin)

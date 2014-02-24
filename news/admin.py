@@ -2,7 +2,7 @@ from django.contrib import admin
 from django.contrib.flatpages.admin import FlatPageAdmin
 from django.contrib.flatpages.models import FlatPage
 from megaholod import settings
-
+from news.models import News
 class CollectionAdmin(admin.ModelAdmin):
  
     class Media:
@@ -13,3 +13,4 @@ class CollectionAdmin(admin.ModelAdmin):
 
 admin.site.unregister(FlatPage)
 admin.site.register(FlatPage, CollectionAdmin)
+admin.site.register(News, CollectionAdmin)

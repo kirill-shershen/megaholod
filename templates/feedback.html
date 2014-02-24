@@ -1,0 +1,28 @@
+<!-- <ul class="messages">
+{% for message in messages %}
+    <li{% if message.tags %} class="{{message.tags}}"{% endif %}>{{ message }}</li>
+{% endfor %}
+</ul> -->
+<p>{{mes}}</p>
+<form id="contact-form" action="" method="post">
+    {% csrf_token %}
+    <label class="name">
+        {{ feedback_form.name }}
+        {{ feedback_form.name.errors }}
+    </label>                
+    <label class="email">
+        {{ feedback_form.email }}
+        {{ feedback_form.email.errors }}
+    </label>
+    <label class="phone">
+        {{ feedback_form.phone }}
+        {{ feedback_form.phone.errors }}
+    </label>
+    <label class="message">
+        {{ feedback_form.message }}
+        {{ feedback_form.message.errors }}
+    </label>
+    <div  class="form_btns">
+        <input type="submit" value="Отправить" class="default_button" />
+    </div>
+</form>

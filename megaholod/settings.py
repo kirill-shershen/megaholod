@@ -18,9 +18,14 @@ DEBUG = env_var('DJ_DEBUG', False) #Unless env var is set to True, debug is off
 TEMPLATE_DEBUG = DEBUG
 
 ADMINS = (
-    # ('Kirill Shershen', 'shkipc@gmail.com'),
+    ('Kirill Shershen', 'shkipc@gmail.com'),
 )
-
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.mail.ru'
+EMAIL_HOST_PASSWORD = 'GtO4ymYNPLuILgGt3yKA'
+EMAIL_HOST_USER = 'django_mail@mail.ru'
+EMAIL_PORT = '25'
+DEFAULT_FROM_EMAIL = 'django_mail@mail.ru'
 MANAGERS = ADMINS
 
 DATABASES = {
@@ -82,6 +87,8 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 STATIC_URL = '/static/'
 
 TEMPLATE_CONTEXT_PROCESSORS = (
+    'feedback.context_processors.feedback_form',
+    'news.context_processors.get_lastnews',
     'django.contrib.auth.context_processors.auth',
     'django.core.context_processors.debug',
     'django.core.context_processors.i18n',
@@ -153,6 +160,7 @@ INSTALLED_APPS = (
     'news',
     'product',
     'south',
+    'feedback',
     # Uncomment the next line to enable admin documentation:
     # 'django.contrib.admindocs',
 )
