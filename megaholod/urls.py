@@ -5,6 +5,7 @@ from django.contrib import admin
 admin.autodiscover()
 import settings
 from megaholod import views
+from product.models import Object
 
 urlpatterns = patterns('',
     # Examples:
@@ -12,6 +13,8 @@ urlpatterns = patterns('',
     url(r'^contacts/', include('feedback.urls'), name='contacts'),
     url(r'^news/', include('news.urls'), name='news'),
     url(r'^about/', 'megaholod.views.about', name='about'),
+    url(r'^product/', include('product.urls'), name='windows'),
+    url(r'^objects/', 'product.views.objs', name='objects'),
     # url(r'^megaholod/', include('megaholod.foo.urls')),
 
     # Uncomment the admin/doc line below to enable admin documentation:
