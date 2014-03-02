@@ -14,6 +14,7 @@ urlpatterns = patterns('',
     url(r'^news/', include('news.urls'), name='news'),
     url(r'^about/', 'megaholod.views.about', name='about'),
     url(r'^product/', include('product.urls'), name='windows'),
+    url(r'^news/', include('news.urls'), name='news'),
     url(r'^objects/', 'product.views.objs', name='objects'),
     # url(r'^megaholod/', include('megaholod.foo.urls')),
 

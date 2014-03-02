@@ -2,36 +2,36 @@
 {% block page %}
 <div class="container">
     <div class="row">
-            {% for rec1, rec2, rec3 in kort %}
-            <div class="col-md-4">
-                <div class="box-2">
-                    <img width="280" height="280" class="thumbnail" src="{{ rec1.image.url }}">
-                    <h3>{{ rec1.name }}</h3>
-                    <p>{{ rec1.description|safe|truncatewords_html:15 }}</p>
-                    <a href="#"  class="more_btn">Узнать больше</a>
-                </div>
+        {% for rec1, rec2, rec3 in kort %}
+        <div class="col-md-4">
+            <div class="box-2">
+                <img width="280" height="280" class="thumbnail" src="{{ rec1.image.url }}">
+                <h3>{{ rec1.name }}</h3>
+                <p>{{ rec1.description|safe|truncatewords_html:15 }}</p>
+                <a href="/product/windows/{{rec1.id}}"  class="more_btn">Узнать больше</a>
             </div>
-            {% if rec2 %}
-            <div class="col-md-4"> 
-                <div class="box-2">
-                    <img width="280" height="280" class="thumbnail" src="{{ rec2.image.url }}">
-                    <h3>{{ rec2.name }}</h3>
-                    <p>{{ rec2.description|safe|truncatewords_html:15 }}</p>
-                    <a href="#"  class="more_btn">Узнать больше</a>
-                </div>
+        </div>
+        {% if rec2 %}
+        <div class="col-md-4"> 
+            <div class="box-2">
+                <img width="280" height="280" class="thumbnail" src="{{ rec2.image.url }}">
+                <h3>{{ rec2.name }}</h3>
+                <p>{{ rec2.description|safe|truncatewords_html:15 }}</p>
+                <a href="/product/windows/{{rec2.id}}"  class="more_btn">Узнать больше</a>
             </div>
-            {% endif %}
-            {% if rec3 %}
-            <div class="col-md-4"> 
-                <div class="box-2">
-                    <img width="280" height="280" class="thumbnail" src="{{ rec3.image.url }}">
-                    <h3>{{ rec3.name }}</h3>
-                    <p>{{ rec3.description|safe|truncatewords_html:15 }}</p>
-                    <a href="#" class="more_btn">Узнать больше</a> 
-                </div>
-            {% endif %}
+        </div>
+        {% endif %}
+        {% if rec3 %}
+        <div class="col-md-4"> 
+            <div class="box-2">
+                <img width="280" height="280" class="thumbnail" src="{{ rec3.image.url }}">
+                <h3>{{ rec3.name }}</h3>
+                <p>{{ rec3.description|safe|truncatewords_html:15 }}</p>
+                <a href="/product/windows/{{rec3.id}}" class="more_btn">Узнать больше</a> 
             </div>
-            {% endfor %} 
+        {% endif %}
+        </div>
+        {% endfor %} 
     </div>
 </div>
 {% endblock %}

@@ -20,6 +20,9 @@ class Product(models.Model):
         verbose_name = 'Продукт'
         verbose_name_plural = 'продукты'
 
+    def get_absolute_url(self):
+        return '/windows/%i'% self.id
+
 class Object(models.Model):
 
     name = models.CharField(max_length=100, verbose_name='Название')

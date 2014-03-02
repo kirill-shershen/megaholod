@@ -23,6 +23,20 @@ def windows(request):
 
 def vacs(request):
     vacs = Product.objects.filter(category = 'HV')
+    # делаем плитку из массива кортежей по 3 записи
+    kort = []
+    i=1
+    recs = []
+    for rec in vacs:
+        if i % 3 == 0:
+            recs.append(rec)
+            kort.append(tuple(recs))
+            recs = []
+        else:
+            recs.append(rec)
+            if i == len(vacs):
+                kort.append(tuple(recs))
+        i += 1
     return render(request, 'vac_list.html', locals())
 
 def objs(request):
