@@ -1,0 +1,12 @@
+<h2><a href="/objects/"><span class="color1">НАШИ</span><br>ОБЪЕКТЫ</a></h2>
+<div class="row">
+    <ul class="slider blockobject">
+        {% for rec in objects_list %}
+        <li class="slide">
+            <img src="{{ rec.image.url }}" class="obj_img">
+            <h3>{{ rec.name }}</h3>
+            <p>{{ rec.description|safe|truncatewords_html:15 }}</p>
+        </li>
+        {% endfor %}
+    </ul>
+</div>

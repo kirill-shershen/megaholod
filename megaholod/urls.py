@@ -5,17 +5,23 @@ from django.contrib import admin
 admin.autodiscover()
 import settings
 from megaholod import views
+from django.views.generic import DetailView
 from product.models import Object
+from product.views import objs
 
 urlpatterns = patterns('',
     # Examples:
     url(r'^$', 'megaholod.views.index', name='index'),
     url(r'^contacts/', include('feedback.urls'), name='contacts'),
     url(r'^news/', include('news.urls'), name='news'),
-    url(r'^about/', 'megaholod.views.about', name='about'),
+    url(r'^about/', views.flat_page, name='about'),
     url(r'^product/', include('product.urls'), name='windows'),
     url(r'^news/', include('news.urls'), name='news'),
-    url(r'^objects/', 'product.views.objs', name='objects'),
+    url(r'^objects/$', objs, name='objects'),
+    url(r'^objects/(?P<pk>\d+)$', DetailView.as_view(model=Object, template_name='object_detail.html')),
+    url(r'^carbon-filter/$', views.flat_page, name='carbon-filter'),
+    url(r'^furneture/$', views.furneture, name='furneture'),
+    url(r'^lamination/$', views.flat_page, name='lamination'),
     # url(r'^megaholod/', include('megaholod.foo.urls')),
 
     # Uncomment the admin/doc line below to enable admin documentation:

@@ -37,3 +37,6 @@ class Object(models.Model):
         ordering = ['-date']
         verbose_name = 'Объект'
         verbose_name_plural = 'объекты'
+
+    def get_absolute_url(self):
+        return '/objects/%i'% self.id

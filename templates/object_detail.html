@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block title %}
+{{ object.name}}
+{% endblock %}
+{% block page %}
+<div class="container">
+    <div class="row">
+    <h3>{{ object.name}}</h3>
+    {{ object.description|safe}}
+    </div>
+</div>
+{% endblock %}

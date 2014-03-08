@@ -89,6 +89,7 @@ STATIC_URL = '/static/'
 TEMPLATE_CONTEXT_PROCESSORS = (
     'feedback.context_processors.feedback_form',
     'news.context_processors.get_lastnews',
+    'product.context_processors.get_objects',
     'django.contrib.auth.context_processors.auth',
     'django.core.context_processors.debug',
     'django.core.context_processors.i18n',

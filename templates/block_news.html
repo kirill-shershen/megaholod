@@ -1,4 +1,4 @@
-<h2><span class="color1">ПОСЛЕДНИЕ</span><br>НОВОСТИ</h2>
+<h2><a href="/news/"><span class="color1">ПОСЛЕДНИЕ</span><br>НОВОСТИ</a></h2>
 {% for news in last_news %}
 <div class="row">
     <div class="col-md-4 jumbo num_section">
@@ -7,7 +7,7 @@
         <span class="date_txt3">{{ news.time|date:"Y" }}</span>
     </div>
     <div class="col-md-8">
-        <p class="txt3">{{news.title}}</p>
+        <p class="txt3"><a href="/news/{{news.id}}" >{{news.title}}</a></p>
         <p class="txt4"></p>
         <p>{{ news.text|safe|truncatewords_html:10}}</p>
     </div>

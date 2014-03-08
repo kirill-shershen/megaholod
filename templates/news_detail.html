@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block title %}
+{{ news.title}}
+{% endblock %}
+{% block page %}
+<div class="container">
+    <div class="row">
+    <h3>{{ news.title}}</h3>
+    {{ news.text|safe}}
+    </div>
+</div>
+{% endblock %}
