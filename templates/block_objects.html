@@ -1,5 +1,6 @@
 <h2><a href="/objects/"><span class="color1">НАШИ</span><br>ОБЪЕКТЫ</a></h2>
 <div class="row">
+{% if objects_list %}
     <ul class="slider blockobject">
         {% for rec in objects_list %}
         <li class="slide">
@@ -9,4 +10,5 @@
         </li>
         {% endfor %}
     </ul>
+{% endif %}
 </div>
