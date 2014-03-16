@@ -11,7 +11,7 @@ class Product(models.Model):
     name = models.CharField(max_length = 150)
     image = models.ImageField(upload_to='uploads')
     description = models.TextField(max_length = 500)
-    
+
     def __unicode__(self):
         return self.name
 

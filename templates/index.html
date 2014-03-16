@@ -21,42 +21,42 @@
 <div class="body">
     <div class="container-fluid jumbo">
         <div id="crsl" class="carousel slide" data-ride="carousel">
-          <!-- Wrapper for slides -->
-          <div class="carousel-inner jumbo">
-            <div class="item active">
-                <img src="/media/uploads/window_cleaning_SCHUCO.jpg" style="width:100%;overflow: hidden;" alt="...">
-                <div class="container">
-                    <div class="carousel-caption" style="bottom:-20px;left:30px;">
-                        <h1 style="text-align:left;">ПЛАСТИКОВЫЕ ОКНА</h1>
-                        <p class="color1" style="text-align:left;font-size:18px">Зеленные технологии для голубой планеты</p>
+            <!-- Wrapper for slides -->
+            <div class="carousel-inner jumbo">
+                <div class="item active">
+                    <img src="{{MEDIA_URL}}uploads/window_cleaning_SCHUCO.jpg" style="width:100%;overflow: hidden;" alt="...">
+                    <div class="container">
+                        <div class="carousel-caption" style="bottom:-20px;left:30px;">
+                            <h1 style="text-align:left;">ПЛАСТИКОВЫЕ ОКНА</h1>
+                            <p class="color1" style="text-align:left;font-size:18px">Зеленные технологии для голубой планеты</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <img src="{{MEDIA_URL}}uploads/vac.jpg" style="width:100%;" class="no-repeat center top" alt="...">
+                    <div class="container">
+                        <div class="carousel-caption" style="bottom:-20px;left:30px;">
+                            <h1 style="text-align:left;">ВСТРАЕВАЕМЫЕ ПЫЛЕСОСЫ</h1>
+                            <p class="color1" style="text-align:left;font-size:18px">Настало время дышать чистым воздухом!</p>
+                        </div>
                     </div>
                 </div>
             </div>
-            <div class="item">
-                <img src="/media/uploads/vac.jpg" style="width:100%;" class="no-repeat center top" alt="...">
-                <div class="container">
-                    <div class="carousel-caption" style="bottom:-20px;left:30px;">
-                        <h1 style="text-align:left;">ВСТРАЕВАЕМЫЕ ПЫЛЕСОСЫ</h1>
-                        <p class="color1" style="text-align:left;font-size:18px">Настало время дышать чистым воздухом!</p>
-                    </div>
-                </div>
-            </div>
-          </div>
 
           <!-- Controls -->
-          <a class="left carousel-control" href="#crsl" data-slide="prev">
-            <span class="glyphicon glyphicon-chevron-left"></span>
-          </a>
-          <a class="right carousel-control" href="#crsl" data-slide="next">
-            <span class="glyphicon glyphicon-chevron-right"></span>
-          </a>
+            <a class="left carousel-control" href="#crsl" data-slide="prev">
+                <span class="glyphicon glyphicon-chevron-left"></span>
+            </a>
+            <a class="right carousel-control" href="#crsl" data-slide="next">
+                <span class="glyphicon glyphicon-chevron-right"></span>
+            </a>
         </div>
         <!-- hello -->
         <div class="row bg-light tab">
             <div class="col-md-1"></div>
             <div class="col-md-3"><p class="bigtitle color1">Добро пожаловать!<p></div>
             <div class="col-md-7"><p class="txt2">МЫ ИСКРЕННЕ ВЕРИМ, ЧТО ДЛЯ ЛЮБОГО ЧЕЛОВЕКА, ЗАИНТЕРЕСОВАННОГО В ИНВЕСТИЦИЯХ В СВОЮ ЖИЗНЬ, МЫ МОЖЕМ БЫТЬ ВЕСЬМА ПОЛЕЗНЫ!</p></div>
-            <div class="col-md-1"></div>
+            <!-- <div class="col-md-1"></div> -->
         </div>
         <!-- products -->
         <div class="row bg-gray">
@@ -64,14 +64,14 @@
             <div class="col-md-7">
                 <h2><span class="color1">НАШИ</span><br>ПРОДУКТЫ</h2>
                 <div class="row">
-                    <div class="col-md-3"><img src="/media/uploads/thumbnail_small.jpg" class="thumbnail"></div>
+                    <div class="col-md-3"><img src="{{MEDIA_URL}}uploads/thumbnail_small.jpg" class="thumbnail"></div>
                     <div class="col-md-9" style="padding:0;">
                         <h2 style="margin-top:0"><a href="/product/windows/"><span class="color1">Пластиковые</span><br>Окна</a></h2>
                         <p>Наша компания предлагает Вам использовать стеклопакеты с энергосберегающим стеклом ClimaGuard® Solar, которое подарит Вам не только экономию и комфорт, но и придаст привлекательность Вашим окнам!</p>
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-md-3"><img src="/media/uploads/Cyclovac_logo_small.JPG" class="thumbnail"></div>
+                    <div class="col-md-3"><img src="{{MEDIA_URL}}uploads/Cyclovac_logo_small.JPG" class="thumbnail"></div>
                     <div class="col-md-9" style="padding:0;">
                         <h2 style="margin-top:0"><a href="/product/vacs/"><span class="color1">Встраевыемые</span><br>пылесосы</a></h2>
                         <p>Недостатков лишены системы центрального пылеудаления (встроенные пылесосы) CycloVac (Канада) и Vacoflo (США), широко применяемые в коттеджах и городских квартирах.</p>
@@ -100,10 +100,10 @@
                 {% include 'block_objects.html' %}
             </div>
             <!-- news -->            
-            <div class="col-md-3">
+            <div class="col-md-4">
                 {% include 'block_news.html' %}
             </div>
-            <div class="col-md-1"></div>
+            <!-- <div class="col-md-1"></div> -->
         </div>
     </div>
 </div>
