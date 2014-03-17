@@ -21,11 +21,11 @@ ADMINS = (
     ('Kirill Shershen', 'shkipc@gmail.com'),
 )
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_HOST = 'smtp.mail.ru'
-EMAIL_HOST_PASSWORD = 'GtO4ymYNPLuILgGt3yKA'
-EMAIL_HOST_USER = 'django_mail@mail.ru'
+EMAIL_HOST = 'smtp.locum.ru'
+EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_PASS')
+EMAIL_HOST_USER = 'info@belgorodokno.ru'
 EMAIL_PORT = '25'
-DEFAULT_FROM_EMAIL = 'django_mail@mail.ru'
+DEFAULT_FROM_EMAIL = 'info@belgorodokno.ru'
 MANAGERS = ADMINS
 
 DATABASES = {

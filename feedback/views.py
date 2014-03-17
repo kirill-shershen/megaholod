@@ -19,7 +19,7 @@ def leave_feedback(request, template_name='contacts.html'):
                 '%s(%s)'%(cd['name'], cd['phone']),
                 cd['message'],
                 cd.get('email', 'noreply@example.com'),
-                ['shkipc@gmail.com'])
+                ['info@belgorodokno.ru'])
         #redirecting back
         return HttpResponseRedirect(request.POST.get('next', request.META.get('HTTP_REFERER', '/')))
         # return render_to_response(template_name, {'next' : request.GET.get('next', '/'), 'feedback_form': FeedbackForm(None), 'mes':message}, context_instance=RequestContext(request))
