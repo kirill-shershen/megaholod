@@ -2,16 +2,16 @@
 {% block page %}
 <div class="container">
     <div class="row">
-        <div class="col-md-1"></div>
+        {# <div class="col-md-1"></div> #}
         <div class="col-md-2">
             <img style="margin:20px 5px 5px 5px" class="thumbnail obj_img" src="/media/uploads/3.jpg">
             <img style="margin:5px"class="thumbnail obj_img" src="/media/uploads/ручки SCHUCO в стандартном ИСПОЛНЕНИИ.jpg">
             <img style="margin:5px" class="thumbnail obj_img" src="/media/uploads/ручка в стандартном исполнении.jpg">
         </div>
-        <div class="col-md-9">
-            <h3>{{ furneture.title }}</h3>
+        <div class="col-md-10">
+            <h3>{{ flatpage.title }}</h3>
 
-            {{ furneture.content|safe|escape }}
+            {{ flatpage.content|safe|escape }}
         </div>
     </div>    
 </div>
