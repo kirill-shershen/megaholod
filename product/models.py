@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 from django.db import models
 
+
 class Product(models.Model):
     category_type = (
         ('WD', 'Окна'),
@@ -8,20 +9,22 @@ class Product(models.Model):
     )
 
     category = models.CharField(max_length=2, choices=category_type)
-    name = models.CharField(max_length = 150)
+    name = models.CharField(max_length=150)
     image = models.ImageField(upload_to='uploads')
-    description = models.TextField(max_length = 500)
+    description = models.TextField(max_length=500)
+    priority = models.IntegerField(max_length=100, default=0)
 
     def __unicode__(self):
         return self.name
 
     class Meta:
-        ordering = ['category', 'name']
+        ordering = ['priority', 'category', 'name']
         verbose_name = 'Продукт'
         verbose_name_plural = 'продукты'
 
     def get_absolute_url(self):
-        return '/windows/%i'% self.id
+        return '/windows/%i' % self.id
+
 
 class Object(models.Model):
 
@@ -39,4 +42,4 @@ class Object(models.Model):
         verbose_name_plural = 'объекты'
 
     def get_absolute_url(self):
-        return '/objects/%i'% self.id
+        return '/objects/%i' % self.id

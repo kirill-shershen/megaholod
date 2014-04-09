@@ -4,3 +4,4 @@ Scripts
 logs
 *.pyc
 .idea
+build
